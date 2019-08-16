@@ -17,12 +17,8 @@
   win_command: powershell.exe -
   args:
     stdin: Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
-  become: yes
-  become_user: Administrator
 
 - name: Install Docker binaries
   win_command: powershell.exe -
   args:
     stdin: Install-Package -Name docker -ProviderName DockerMsftProvider -Force
-  become: yes
-  become_user: Administrator
