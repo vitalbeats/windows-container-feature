@@ -6,12 +6,14 @@ This role can be used to install / remove the Windows Container feature, along w
 Requirements
 ------------
 
-This role is targetted at Windows hosts only, targetting Windows Server 2016 / 2019. It uses Cmdlets that would not necessarily be available on Windows 10.
+This role is targetted at Windows hosts only, targeting Windows Server 2016 / 2019 and Windows 10 Pro / Enterprise.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+| Variable                           | Description                                                                             | Default Value | Required |
+| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------- | -------- |
+| `windows_container_feature_hyperv` | Whether or not to also install the Hyper-V feature for more strict container isolation. | True          | No       |
 
 Dependencies
 ------------
@@ -21,11 +23,9 @@ This role has no dependencies from Ansible Galaxy.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - hosts: windowsservers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: windows-container-feature, windows_container_feature_hyperv: False }
 
 License
 -------

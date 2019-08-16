@@ -1,2 +1,29 @@
 ---
 # tasks file for windows-container-feature
+- name: Enable Containers Feature
+  win_optional_feature:
+    name:
+    - Containers
+  state: present
+
+- name: Enable Hyper-V Feature
+  win_optional_feature:
+    name:
+    - Microsoft-Hyper-V
+  state: present
+  when:
+  - windows_container_feature_hyperv | bool
+
+- name: Install Docker PowerShell module
+  win_command: powershell.exe -
+  args:
+    stdin: Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+  become: yes
+  become_user: Administrator
+
+- name: Install Docker binaries
+  win_command: powershell.exe -
+  args:
+    stdin: Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+  become: yes
+  become_user: Administrator
