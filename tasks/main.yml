@@ -22,3 +22,8 @@
   win_command: powershell.exe -
   args:
     stdin: Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+
+- name: Ensure Docker service is started
+  win_service:
+    name: docker
+    state: started
