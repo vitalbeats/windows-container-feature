@@ -1,2 +1,3 @@
 ---
 # defaults file for windows-container-feature
+ windows_container_feature_hyperv: True
