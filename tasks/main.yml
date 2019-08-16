@@ -1,16 +1,15 @@
 ---
-# tasks file for windows-container-feature
 - name: Enable Containers Feature
   win_optional_feature:
     name:
     - Containers
-  state: present
+    state: present
 
 - name: Enable Hyper-V Feature
   win_optional_feature:
     name:
     - Microsoft-Hyper-V
-  state: present
+    state: present
   when:
   - windows_container_feature_hyperv | bool
 
