@@ -6,7 +6,7 @@ This role can be used to install / remove the Windows Container feature, along w
 Requirements
 ------------
 
-This role is targetted at Windows hosts only, targeting Windows Server 2016 / 2019 and Windows 10 Pro / Enterprise.
+This role is targetted at Windows hosts only, targeting Windows Server 2016 / 2019 and Windows 10 Pro / Enterprise. Because of the nature of this role, it is assumed the role is running as a user with elevated privileges.
 
 Role Variables
 --------------
