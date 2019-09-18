@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: windowsservers
       roles:
-         - { role: stephen001.windows_container_feature, windows_container_feature_hyperv: False }
+         - { role: vitalbeats.windows_container_feature, windows_container_feature_hyperv: False }
 
 License
 -------
