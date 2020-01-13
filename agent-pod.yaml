@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ansible-build-pod
+spec:
+  serviceAccountName: jenkins
+  containers:
+    - name: ansible-lint
+      image: cytopia/ansible-lint:latest
+      tty: true
+      command:
+        - cat
